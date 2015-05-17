@@ -4,7 +4,7 @@ docker-mosquitto
 Docker image for mosquitto
 
 
-Exposes Port 1883
+Exposes Ports 1883 and 8883
 
 Volumes: /mqtt/config, /mqtt/data and /mqtt/log
 
