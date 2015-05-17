@@ -2,7 +2,6 @@ FROM debian:jessie
 
 MAINTAINER Thomas Kerpe <thomas@kerpe.net>
 
-
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y wget
@@ -14,9 +13,9 @@ RUN apt-get update && apt-get install -y mosquitto
 RUN adduser --system --disabled-password --disabled-login mosquitto
 
 COPY config /mqtt/config
+
 VOLUME ["/mqtt/config", "/mqtt/data", "/mqtt/log"]
 
+EXPOSE 1883 8883
 
-EXPOSE 1883
 CMD /usr/sbin/mosquitto -c /mqtt/config/mosquitto.conf
-
